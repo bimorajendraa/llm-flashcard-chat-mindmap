@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Learning Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-100 min-h-screen">
+    <!-- HEADER -->
+    <header class="bg-slate-900 text-white py-4 shadow">
+      <h1 class="text-center text-xl font-semibold">
+        🤖 AI Learning Assistant
+      </h1>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- CHATBOT -->
+      <section class="bg-white rounded-xl shadow p-4 flex flex-col">
+        <h2 class="text-lg font-semibold mb-3">💬 Chatbot</h2>
+
+        <div
+          id="chatBox"
+          class="flex-1 border rounded-lg p-3 overflow-y-auto space-y-2 bg-slate-50"
+        ></div>
+
+        <div class="mt-3 flex gap-2">
+          <input
+            id="chatInput"
+            class="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring"
+            placeholder="Tanya apa saja..."
+          />
+          <button
+            onclick="sendChat()"
+            class="bg-blue-600 text-white px-4 rounded-lg hover:bg-blue-700"
+          >
+            Kirim
+          </button>
+        </div>
+      </section>
+
+      <!-- FLASHCARD -->
+      <section class="bg-white rounded-xl shadow p-4">
+        <h2 class="text-lg font-semibold mb-3">🃏 Flashcard</h2>
+
+        <textarea
+          id="flashcardInput"
+          class="w-full border rounded-lg p-2 mb-3"
+          rows="5"
+          placeholder="Masukkan materi..."
+        ></textarea>
+
+        <button
+          onclick="generateFlashcard()"
+          class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 mb-3"
+        >
+          Generate Flashcard
+        </button>
+
+        <div id="flashcardOutput" class="space-y-3"></div>
+      </section>
+
+      <!-- MIND MAP -->
+      <section class="bg-white rounded-xl shadow p-4 md:col-span-2">
+        <h2 class="text-lg font-semibold mb-3">🧠 Mind Map</h2>
+
+        <textarea
+          id="mindmapInput"
+          class="w-full border rounded-lg p-2 mb-3"
+          rows="4"
+          placeholder="Masukkan materi..."
+        ></textarea>
+
+        <button
+          onclick="generateMindmap()"
+          class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 mb-3"
+        >
+          Generate Mind Map
+        </button>
+
+        <pre
+          id="mindmapOutput"
+          class="bg-slate-900 text-green-200 p-3 rounded-lg overflow-x-auto text-sm"
+        ></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
